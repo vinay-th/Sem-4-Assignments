@@ -55,10 +55,34 @@ void insertAtHead() {
   start = newNode;
 }
 
+void insertInBtwByPosition() {
+  int pos, val;
+  Node *newNode = new Node;
+  Node *ptr = start, *prePtr = start;
+
+  cout << "Enter the index of node to insert the node next to it: ";
+  cin >> pos;
+
+  for (int i = 0; i < pos; i++) {
+    prePtr = ptr;
+    ptr = ptr->next;
+  }
+
+  cout << "Enter the value to insert after " << pos << "th node: ";
+  cin >> val;
+
+  newNode->data = val;
+  prePtr->next = newNode;
+  newNode->next = ptr;
+
+  cout << "Now the data at " << pos + 1 << "th node is: " << newNode->data << endl;
+}
+
 int main() {
 
   createLinkedList();
-  insertAtHead();
+  // insertAtHead();
+  insertInBtwByPosition();
   display();
 
   cout << "\n";
