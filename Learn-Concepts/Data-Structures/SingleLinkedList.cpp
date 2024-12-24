@@ -34,6 +34,11 @@ void createLinkedList() {
 
 // This function displays all the nodes present in LL
 void display() {
+  if (start == NULL) {
+    cout << "The list is empty. Cannot insert after a value." << endl;
+    return;
+  }
+
   Node *node = start;
   while (node != NULL) {
     cout << node->data << " ";
@@ -55,6 +60,7 @@ void insertAtHead() {
   start = newNode;
 }
 
+// This func will insert a new node according to the position defined by user
 void insertInBtwByPosition() {
   int pos, val;
   Node *newNode = new Node;
@@ -75,14 +81,46 @@ void insertInBtwByPosition() {
   prePtr->next = newNode;
   newNode->next = ptr;
 
-  cout << "Now the data at " << pos + 1 << "th node is: " << newNode->data << endl;
+  cout << "Now the data at " << pos + 1 << "th node is: " << newNode->data
+       << endl;
+}
+
+// This func inserts a node after an existing value given by user
+void insertInAfterVal() {
+  if (start == NULL) {
+    cout << "The list is empty. Cannot insert after a value." << endl;
+    return;
+  }
+
+  int val, data;
+
+  Node *newNode = new Node;
+  Node *ptr = start;
+  Node *prePtr = start;
+
+  cout << "Enter the value of the node to insert a node after: ";
+  cin >> val;
+
+  while (ptr->data != val) {
+    prePtr = ptr;
+    ptr = ptr->next;
+  }
+
+  cout << "Enter the value of the new node: ";
+  cin >> data;
+
+  newNode->data = data;
+  newNode->next = ptr->next;
+
+  ptr->next = newNode;
 }
 
 int main() {
 
-  createLinkedList();
+  // createLinkedList();
   // insertAtHead();
-  insertInBtwByPosition();
+  // insertInBtwByPosition();
+  insertInAfterVal();
   display();
 
   cout << "\n";
