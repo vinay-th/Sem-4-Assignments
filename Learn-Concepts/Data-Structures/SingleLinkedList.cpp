@@ -115,6 +115,13 @@ void insertInAfterVal() {
   ptr->next = newNode;
 }
 
+void deleteNodeAtStart() {
+  if (start == NULL) {
+    cout << "The list is empty. Cannot insert after a value." << endl;
+    return;
+  }
+}
+
 int main() {
 
   // createLinkedList();
