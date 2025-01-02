@@ -1,4 +1,4 @@
-public class ProffThatArrayIsObj {
+public class ProofThatArrayIsObj {
     public static void changeVal(int[] arr) {
         arr[2] = 50;
     }
