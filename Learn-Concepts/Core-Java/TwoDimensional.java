@@ -23,7 +23,7 @@ public class TwoDimensional {
         return max;
     }
 
-    public static int min(int[][] arr) {
+    int min(int[][] arr) {
         int min = arr[0][0];
 
         for (int[] row : arr) {
@@ -34,6 +34,18 @@ public class TwoDimensional {
         }
 
         return min;
+    }
+
+    public static void printDiagonal(int[][] arr) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == j || j == 3 - 1 - i)
+                    System.out.print(arr[i][j] + " ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
@@ -50,6 +62,13 @@ public class TwoDimensional {
         // print(mat);
 
         // System.out.println("The largest number of the array is : " + max(mat));
-        // System.out.println("The smallest number of the array is : " + min(mat));
+
+        // This is for creating an object and using the instance method
+        // TwoDimensional obj = new TwoDimensional();
+        // System.out.println("The smallest number of the array is : " + obj.min(mat));
+
+        printDiagonal(mat);
+
+        sc.close();
     }
 }
