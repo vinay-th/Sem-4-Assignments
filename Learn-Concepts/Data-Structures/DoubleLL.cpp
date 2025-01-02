@@ -24,21 +24,18 @@ void createLinkedList() {
     newNode = new Node;
     cout << "Enter the data for [" << i + 1 << "] node: ";
     cin >> newNode->data;
+
     newNode->prev = NULL;
     newNode->next = NULL;
 
     if (start == NULL) {
       start = newNode;
-      ptr = start;
-      prePtr = ptr;
     } else {
-      ptr->next = newNode;
-      prePtr = ptr;
-      ptr = newNode;
-      ptr->prev = prePtr;
+      rear->next = newNode;
+      newNode->prev = rear;
     }
+    rear = newNode;
   }
-  rear = ptr;
 }
 
 void printLinkedList() {
