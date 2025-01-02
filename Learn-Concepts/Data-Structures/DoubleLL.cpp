@@ -68,7 +68,24 @@ void insertAtEnd(int data) {
   rear = newNode;
 }
 
-void insertInBtw() {}
+void insertInBtw(int data, int pos) {
+  Node *ptr = start;
+  Node *newNode = new Node;
+
+  for (int i = 1; i < pos; i++) {
+    ptr = ptr->next;
+  }
+
+  newNode->data = data;
+  newNode->next = ptr->next;
+  newNode->prev = ptr;
+
+  ptr->next = newNode;
+
+  // for the node after newNode
+  ptr = newNode->next;
+  ptr->prev = newNode;
+}
 
 void deleteAtStart() {}
 
@@ -88,9 +105,10 @@ void reverseLL() {
 int main() {
   createLinkedList();
   //   insertAtStart(10);
-  insertAtEnd(10);
-  printLinkedList();
-  //   reverseLL();
+  //   insertAtEnd(10);
+  insertInBtw(10, 3);
+  //   printLinkedList();
+  reverseLL();
 
   cout << "\n";
   return 0;
