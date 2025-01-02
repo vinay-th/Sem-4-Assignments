@@ -38,16 +38,6 @@ void createLinkedList() {
   rear = ptr;
 }
 
-void printLinkedList() {
-  Node *ptr = start;
-
-  while (ptr->next != NULL) {
-    cout << ptr->data << endl;
-    ptr = ptr->next;
-  }
-  cout << ptr->data;
-}
-
 void insertNodeAtEnd(int data) {
   Node *newNode = new Node;
   newNode->data = data;
@@ -85,6 +75,25 @@ void deleteAt(int pos) {
   delete (ptr);
 }
 
+void deleteAtStart() {
+  Node *ptr = start;
+
+  start = start->next;
+  free(ptr);
+}
+
+void deleteAtEnd() {
+  Node *ptr = start, *prePtr;
+
+  while (ptr != rear) {
+    prePtr = ptr;
+    ptr = ptr->next;
+  }
+
+  prePtr->next = NULL;
+  free(ptr);
+}
+
 int countLen() {
   Node *ptr = start;
   int count = 0;
@@ -105,6 +114,16 @@ void insertAtStart(int data) {
   start = newNode;
 }
 
+void printLinkedList() {
+  Node *ptr = start;
+
+  while (ptr->next != NULL) {
+    cout << ptr->data << endl;
+    ptr = ptr->next;
+  }
+  cout << ptr->data;
+}
+
 int main() {
   createLinkedList();
   //   insertNodeAtEnd(50);
@@ -114,6 +133,8 @@ int main() {
   //   deleteAt(3);
   //   cout << "The length of linked list is : " << countLen() << endl;
   //   insertAtStart(30);
+  deleteAtStart();
+  deleteAtEnd();
   printLinkedList();
 
   cout << "\n";
