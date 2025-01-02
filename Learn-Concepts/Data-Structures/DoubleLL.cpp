@@ -87,9 +87,23 @@ void insertInBtw(int data, int pos) {
   ptr->prev = newNode;
 }
 
-void deleteAtStart() {}
+void deleteAtStart() {
+  Node *ptr = start;
 
-void deleteAtEnd() {}
+  start = start->next;
+  start->prev = NULL;
+
+  free(ptr);
+}
+
+void deleteAtEnd() {
+  Node *ptr = rear;
+
+  rear = rear->prev;
+  rear->next = NULL;
+
+  free(ptr);
+}
 
 void deleteInBtw() {}
 
@@ -106,9 +120,11 @@ int main() {
   createLinkedList();
   //   insertAtStart(10);
   //   insertAtEnd(10);
-  insertInBtw(10, 3);
-  //   printLinkedList();
-  reverseLL();
+  //   insertInBtw(10, 3);
+  //   deleteAtStart();
+  deleteAtEnd();
+  printLinkedList();
+  //   reverseLL();
 
   cout << "\n";
   return 0;
