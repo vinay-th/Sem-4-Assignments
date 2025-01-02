@@ -105,7 +105,20 @@ void deleteAtEnd() {
   free(ptr);
 }
 
-void deleteInBtw() {}
+void deleteInBtw(int pos) {
+  Node *ptr = start;
+  Node *postPtr = start;
+
+  for (int i = 1; i < pos; i++) {
+    ptr = ptr->next;
+  }
+
+  postPtr = ptr->next;
+  postPtr = postPtr->next;
+
+  ptr->next = postPtr;
+  postPtr->prev = ptr;
+}
 
 void reverseLL() {
   Node *ptr = rear;
@@ -122,7 +135,8 @@ int main() {
   //   insertAtEnd(10);
   //   insertInBtw(10, 3);
   //   deleteAtStart();
-  deleteAtEnd();
+  //   deleteAtEnd();
+  // deleteInBtw(3);
   printLinkedList();
   //   reverseLL();
 
