@@ -50,5 +50,7 @@ public class Employees {
         for (Employees emp : sortedEmployees) {
             print(emp);
         }
+
+        sc.close();
     }
 }
