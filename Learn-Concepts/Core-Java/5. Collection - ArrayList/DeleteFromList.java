@@ -32,5 +32,7 @@ public class DeleteFromList {
 
         delete(pos);
         System.out.println("The list after deletion: " + list);
+
+        sc.close();
     }
 }
