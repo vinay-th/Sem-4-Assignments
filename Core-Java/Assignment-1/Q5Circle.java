@@ -15,5 +15,7 @@ public class Q5Circle {
         double area = Math.PI * rad * rad;
 
         System.out.println("The are of a circle with radius " + rad + " is: " + area);
+
+        sc.close();
     }
 }
