@@ -38,5 +38,7 @@ public class Q8Prime {
         // Just like you have to remember to take input in string
         // Before using the input you need to parse it
         Q8Prime obj = new Q8Prime(Integer.parseInt(num));
+
+        sc.close();
     }
 }
