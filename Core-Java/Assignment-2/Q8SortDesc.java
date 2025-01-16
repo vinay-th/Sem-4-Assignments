@@ -1,7 +1,6 @@
 // Write a Java program to sort array elements in descending order
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Q8SortDesc {
     public static void main(String[] args) {
