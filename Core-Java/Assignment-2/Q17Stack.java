@@ -39,7 +39,7 @@ public class Q17Stack {
                     System.out.print("\nEnter the element: ");
                     int num = sc.nextInt();
 
-                    // use add method to add the number in stack
+                    // use push method to add the number in stack
                     stack.push(num);
                     break;
 
