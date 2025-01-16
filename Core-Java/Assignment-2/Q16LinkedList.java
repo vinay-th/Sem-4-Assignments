@@ -30,7 +30,7 @@ public class Q16LinkedList {
 
         outerLoop: while (true) {
             // i am doing an infinite menu driven prog you can do it as you like
-            System.out.println("\n\nYou can perform following operations on ArrayList: ");
+            System.out.println("\n\nYou can perform following operations on LinkedList: ");
             System.out.println("1. Add element in Linked List");
             System.out.println("2. Add different list in Linked List");
             System.out.println("3. Add element at the start");
