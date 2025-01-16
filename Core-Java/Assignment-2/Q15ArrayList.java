@@ -80,12 +80,14 @@ public class Q15ArrayList {
                     break;
 
                 case 4:
+                    // use simple inbuilt method of sort pass null in args
                     list.sort(null);
                     System.out.println("Sorted the array list");
 
                     break;
 
                 case 5:
+                    // print the list using toString
                     System.out.println("The current list is: " + list.toString());
 
                     break;
@@ -98,9 +100,6 @@ public class Q15ArrayList {
                     break;
             }
         }
-
-        // here we will use the get method to get element on specific idx
-
         sc.close();
     }
 }
