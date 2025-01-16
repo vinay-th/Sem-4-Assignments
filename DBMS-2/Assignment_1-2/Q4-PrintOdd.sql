@@ -5,6 +5,7 @@ DECLARE
     i NUMBER := 1;
 
 BEGIN
+    -- simple loop just like even 
     WHILE i <= 100 LOOP
         DBMS_OUTPUT.PUT_LINE(i);
         i := i + 2;
