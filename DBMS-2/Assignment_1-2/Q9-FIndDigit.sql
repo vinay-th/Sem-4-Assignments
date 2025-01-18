@@ -4,8 +4,7 @@ DECLARE
     COUNTER NUMBER := 0;
     REMINDER NUMBER(2) := 0;
 BEGIN
-    WHILE N != 0
-    LOOP
+    WHILE N != 0 LOOP
         REMINDER := MOD(N,10);
         COUNTER := COUNTER+1;
         N := N / 10;
