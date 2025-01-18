@@ -6,6 +6,7 @@
     "*.ts": "typescript",
     "*.tsx": "typescriptreact",
     "iostream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "ostream": "cpp"
   }
 }
