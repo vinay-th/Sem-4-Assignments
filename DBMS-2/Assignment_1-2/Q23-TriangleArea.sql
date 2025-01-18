@@ -8,7 +8,7 @@ DECLARE
     b NUMBER := &b;
     c NUMBER := &c;
     s NUMBER := (a + b + c) / 2;
-    area FLOAT;
+    area NUMBER(7,2);
 BEGIN
     area := SQRT(s * (s - a) * (s - b) * (s - c));
     DBMS_OUTPUT.PUT_LINE('The area is: ' || area);
