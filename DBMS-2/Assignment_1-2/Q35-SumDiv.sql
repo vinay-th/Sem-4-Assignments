@@ -5,7 +5,7 @@ DECLARE
     s NUMBER(10,2) := 0;
 BEGIN
     FOR i IN 1 .. n LOOP
-        res := 1/i;
+        res := 1/i; -- WE SIMPLY NEED SUM OF 1/i TILL 1/n 
         s := s + res;
     END LOOP;
     DBMS_OUTPUT.PUT_LINE('The SUM till ' || n || ' is ' || s);
