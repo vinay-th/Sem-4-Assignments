@@ -1,0 +1,11 @@
+-- WAP to accept the mgrno and display the empno,ename,sal,dname and grade of all emps working under that mgr
+DECLARE
+    EMPNOV NUMBER:=&EMPNOV;
+    HIREDATEV DATE;
+    EXPV NUMBER(10,5);
+BEGIN
+    SELECT HIREDATE INTO HIREDATEV FROM EMP WHERE EMPNO=EMPNOV;
+    EXPV:=ROUND(MONTHS_BETWEEN(SYSDATE,HIREDATEV)/12,3);
+    DBMS_OUTPUT.PUT_LINE('EXPERIENCE OF EMP'||EMPNOV||' IS '||EXPV||' YEARS ');
+END;
+/
