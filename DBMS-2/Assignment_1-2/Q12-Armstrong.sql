@@ -12,7 +12,7 @@ BEGIN
         res := res + (reminder * reminder * reminder);
         temp := TRUNC(temp / 10);
     END LOOP;
-    IF(num = res) THEN
+    IF num = res THEN
         DBMS_OUTPUT.PUT_LINE('The number ' || num || ' is armstrong');
     ELSE
         DBMS_OUTPUT.PUT_LINE('The number ' || num || ' is armstrong');
