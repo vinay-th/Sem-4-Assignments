@@ -1,34 +1,42 @@
+// In this prog we will try to create a simple queue with arrays
 #include <iostream>
 using namespace std;
 
+// just like stack init queue and size of queue
 int queue[100], queueSize = 100;
-int front = -1, rear = -1;
+// queue has front and rear we init them with -1
+int front = -1, rear = -1; // front = rear = -1
 
+// enqueue is a func that adds an element in queue
 void enqueue(int val) {
   if (rear == queueSize - 1)
     cout << "Queue overflow";
   else {
-    if (front == -1 && rear == -1) {
+    if (front == -1 &&
+        rear == -1) { // when the queue is empty front = rear = -1
       front = 0;
       rear = 0;
     } else
-      rear++;
+      rear++; // if queue already exists rear will be +1
 
-    queue[rear] = val;
+    queue[rear] = val; // add the element at rear
   }
 }
 
+// dequeue is a func to delete the element from the front
 void dequeue() {
   if (front == -1)
     cout << "Queue underflow";
   else {
-    queue[front] = 0;
-    front++;
+    queue[front] = 0; // this is not compulsory but you can do that
+    front++;          // this is most imp part we need to inc front by 1
   }
 }
 
+// peek retrieves the first element of the queue
 int peek() { return queue[front]; }
 
+// display func to show every element in queue
 void display() {
   if (front == -1)
     cout << "Queue underflow";
