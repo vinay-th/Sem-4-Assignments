@@ -3,7 +3,7 @@
 using namespace std;
 
 // just like stack init queue and size of queue
-int queue[100], queueSize = 100;
+int queue[5], queueSize = 5;
 // queue has front and rear we init them with -1
 int front = -1, rear = -1; // front = rear = -1
 
@@ -28,8 +28,7 @@ void dequeue() {
   if (front == -1)
     cout << "Queue underflow";
   else {
-    queue[front] = 0; // this is not compulsory but you can do that
-    front++;          // this is most imp part we need to inc front by 1
+    front++; // this is most imp part we need to inc front by 1
   }
 }
 
