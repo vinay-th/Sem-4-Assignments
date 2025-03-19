@@ -8,17 +8,20 @@
 // the super
 // keyword.
 
+// create a simple class MotorVehicle
 class MotorVehicle {
     String modelName;
     int modelNumber;
     float modelPrice;
 
+    // Default constructor
     MotorVehicle(String modelName, int modelNumber, float modelPrice) {
         this.modelName = modelName;
         this.modelNumber = modelNumber;
         this.modelPrice = modelPrice;
     }
 
+    // display all details
     void display() {
         System.out.println("The model name is: " + modelName);
         System.out.println("The model number is: " + modelNumber);
@@ -26,14 +29,19 @@ class MotorVehicle {
     }
 }
 
+// We use Car extends MotorVehicle
 class Car extends MotorVehicle {
     float discountRate;
 
+    // default constructor for Car
     Car(String modelName, int modelNumber, float modelPrice, float discountRate) {
+        // as MotorVehicle requires data we use super.(val...) for parent class
+        // constructor i.e MotorVehicle
         super(modelName, modelNumber, modelPrice);
         this.discountRate = discountRate;
     }
 
+    // we use Override as display method exists in Parent class
     @Override
     void display() {
         super.display();
