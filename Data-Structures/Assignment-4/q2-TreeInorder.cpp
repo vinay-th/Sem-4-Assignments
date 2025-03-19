@@ -1,4 +1,4 @@
-// 1. Write a C program to create a tree and perform Preorder on it.
+// 2. Write a C program to create a tree and perform Inorder on it.
 #include <iostream>
 using namespace std;
 
@@ -12,20 +12,22 @@ public:
 
 Node *root = NULL;
 
-Node *insert(Node *tree, int val) {
+Node *insert(Node *root, int val) {
   Node *newNode = new Node();
 
   newNode->data = val;
   newNode->left = NULL;
   newNode->right = NULL;
 
-  if (tree == NULL)
-    tree = newNode;
+  if (root == NULL)
+    root = newNode;
   else {
-    Node *ptr = tree, *parentPtr = NULL;
+    Node *ptr = root;
+    Node *parentPtr = NULL;
 
     while (ptr != NULL) {
       parentPtr = ptr;
+
       if (val < ptr->data)
         ptr = ptr->left;
       else
@@ -38,16 +40,16 @@ Node *insert(Node *tree, int val) {
       parentPtr->right = newNode;
   }
 
-  return tree;
+  return root;
 }
 
-// Preorder traversal: Root → Left → Right
+// Inorder traversal: Left → Root → Right
 // output: 40 20 10 30 60 50 70
-void preorder(Node *ptr) {
+void inorder(Node *ptr) {
   if (ptr != NULL) {
+    inorder(ptr->left);
     cout << ptr->data << " ";
-    preorder(ptr->left);
-    preorder(ptr->right);
+    inorder(ptr->right);
   }
 }
 
@@ -60,8 +62,7 @@ int main() {
   root = insert(root, 50);
   root = insert(root, 70);
 
-  cout << "The preorder representation of tree is: ";
-  preorder(root);
+  inorder(root);
 
   cout << "\n";
   return 0;

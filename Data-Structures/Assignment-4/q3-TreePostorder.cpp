@@ -1,8 +1,7 @@
-// 1. Write a C program to create a tree and perform Preorder on it.
+// 3. Write a C program to create a tree and perform Postorder on it.
 #include <iostream>
 using namespace std;
 
-// make sure you checkout Learn-Concepts/DS/Unit4 -> TreeBasic
 class Node {
 public:
   int data;
@@ -10,7 +9,7 @@ public:
   Node *right;
 };
 
-Node *root = NULL;
+Node *tree = NULL;
 
 Node *insert(Node *tree, int val) {
   Node *newNode = new Node();
@@ -22,7 +21,8 @@ Node *insert(Node *tree, int val) {
   if (tree == NULL)
     tree = newNode;
   else {
-    Node *ptr = tree, *parentPtr = NULL;
+    Node *ptr = tree;
+    Node *parentPtr = NULL;
 
     while (ptr != NULL) {
       parentPtr = ptr;
@@ -41,28 +41,25 @@ Node *insert(Node *tree, int val) {
   return tree;
 }
 
-// Preorder traversal: Root → Left → Right
-// output: 40 20 10 30 60 50 70
-void preorder(Node *ptr) {
+void postorder(Node *ptr) {
   if (ptr != NULL) {
+    postorder(ptr->left);
+    postorder(ptr->right);
     cout << ptr->data << " ";
-    preorder(ptr->left);
-    preorder(ptr->right);
   }
 }
 
 int main() {
-  root = insert(root, 40);
-  root = insert(root, 20);
-  root = insert(root, 60);
-  root = insert(root, 10);
-  root = insert(root, 30);
-  root = insert(root, 50);
-  root = insert(root, 70);
+  tree = insert(tree, 40);
+  tree = insert(tree, 20);
+  tree = insert(tree, 60);
+  tree = insert(tree, 10);
+  tree = insert(tree, 30);
+  tree = insert(tree, 50);
+  tree = insert(tree, 70);
 
-  cout << "The preorder representation of tree is: ";
-  preorder(root);
+  postorder(tree);
 
-  cout << "\n";
+  cout << endl;
   return 0;
 }
