@@ -1,4 +1,5 @@
-// Hey so this prog will basically just push and pop from the stack made of array
+// Hey so this prog will basically just push and pop from the stack made of
+// array
 //  Push in stack means adding a value to the top of the stack Pop means to
 // delete the value that is on the top of the stack
 #include <iostream>
@@ -27,7 +28,8 @@ void pop() {
   if (top <= -1) // check if top is not <= -1
     cout << "The stack is underflowed";
   else {
-    stack[top] = 0; // You may or may not want to make the top zero this is optional
+    stack[top] =
+        0; // You may or may not want to make the top zero this is optional
     top--; // but decreasing the top by 1 is compulsory
   }
 }
@@ -35,7 +37,7 @@ void pop() {
 void display() {
   if (top >= 0) {
     cout << "The stack elements are: ";
-    for (int i; i <= top; i++) { // simple for loop to display array till top
+    for (int i = top; i >= 0; i--) {
       cout << stack[i] << " ";
     }
   }

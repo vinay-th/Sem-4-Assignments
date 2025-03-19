@@ -21,8 +21,8 @@ void display() {
   if (top <= -1)
     cout << "The stack is empty";
   else {
-    cout << "The full stack is : ";
-    for (int i = 0; i <= top; i++) {
+    cout << "The full stack (top to bottom) is : ";
+    for (int i = top; i >= 0; i--) {
       cout << stack[i] << " ";
     }
     cout << endl;
