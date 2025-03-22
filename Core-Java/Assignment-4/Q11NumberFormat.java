@@ -15,7 +15,8 @@ public class Q11NumberFormat {
             System.out.println("Converted Integer: " + num);
         } catch (NumberFormatException e) {
             System.out.println("Error: Invalid input! Bc enter a numeric value.");
+        } finally {
+            sc.close();
         }
-
     }
 }
