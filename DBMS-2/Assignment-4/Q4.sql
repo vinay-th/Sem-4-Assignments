@@ -7,6 +7,8 @@
 --     age NUMBER
 -- );
 
+--  INSERT INTO users (user_id, u_name, email, age) VALUES (1, 'VINAY', 'vinay@gmail', 19);
+
 CREATE OR REPLACE PROCEDURE User_Display(
     u_user_id IN NUMBER
 ) AS 
@@ -23,6 +25,12 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('User name: ' || n_name);
     DBMS_OUTPUT.PUT_LINE('User email: ' || n_email);
     DBMS_OUTPUT.PUT_LINE('User age: ' || n_age);
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN 
+        DBMS_OUTPUT.PUT_LINE('KUCH NAI MILA');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('KUCH TOH FATT GAYA');
 END User_Display;
 /
 
