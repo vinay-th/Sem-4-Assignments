@@ -55,5 +55,6 @@
     "text_encoding": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp"
-  }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore"
 }
